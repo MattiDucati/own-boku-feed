@@ -17,6 +17,19 @@
       }
     },
     {
+      "id": "featured-002",
+      "title": "University Research",
+      "shortDescription": "University research plays a critical role in advancing the betterment of humanity through the pursuit of knowledge. University researchers are highly qualified experts in their respective fields, possessing the knowledge and experience to ask the right questions, design sound experiments, and analyze complex data.",
+      "thumbnail": "https://oneworldnetwork.io/wp-content/uploads/2023/02/maxresdefault-2-1.jpg",
+      "genres": ["featured"],
+      "releaseDate": "2026-01-02",
+      "content": {
+        "dateAdded": "2026-01-01T00:00:00Z",
+        "videos": [{ "url": "https://stream.mux.com/RSj002P9Ql01QzSTp46ZBP47sNkWz7cbdLcGlVsoK01JBk.m3u8", "quality": "HD", "videoType": "HLS" }],
+        "duration": 40
+      }
+    },
+    {
       "id": "what-001",
       "title": "What is the National Science Foundation",
       "shortDescription": "Find out about all the exciting work that the NSF do and how they contribute to society!",
