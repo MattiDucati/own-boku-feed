@@ -1,13 +1,13 @@
 {
   "providerName": "One World Network",
-  "lastUpdated": "2026-03-16T17:18:40.036Z",
+  "lastUpdated": "2026-03-16T17:27:12.764Z",
   "language": "en",
   "movies": [
     {
       "id": "featured-001",
       "title": "Welcome to One World",
       "shortDescription": "Dive into the exciting One World of Science!",
-      "thumbnail": "https://oneworldnetwork.io/wp-content/uploads/2025/03/Background1920x1080.jp",
+      "thumbnail": "https://oneworldnetwork.io/wp-content/uploads/2025/03/Background1920x1080.jpg",
       "genres": [
         "featured"
       ],
@@ -193,27 +193,6 @@
       }
     },
     {
-      "id": "what-008",
-      "title": "What is Biotechnology?",
-      "shortDescription": "From medicine to agriculture, biotechnology plays a vital role in shaping our modern world.",
-      "thumbnail": "https://oneworldnetwork.io/wp-content/uploads/2023/10/maxresdefault-1.jpg",
-      "genres": [
-        "What is?"
-      ],
-      "releaseDate": "2026-01-01",
-      "content": {
-        "dateAdded": "2026-01-01T00:00:00Z",
-        "videos": [
-          {
-            "url": "https://stream.mux.com/euqRztr3CfSSzzoBhRLB3pxGR02FUlpt5FqolFJrM16Q.m3u8",
-            "quality": "HD",
-            "videoType": "HLS"
-          }
-        ],
-        "duration": 66
-      }
-    },
-    {
       "id": "Enviro-001",
       "title": "Restoring Lost Reefs",
       "shortDescription": "In a groundbreaking discovery, researchers at the University of Adelaide uncovered a lost ecosystem of oyster reefs that once covered entire gulfs in South Australia.",
@@ -236,23 +215,23 @@
     },
     {
       "id": "Enviro-002",
-      "title": "The Library of EarthÕs History",
-      "shortDescription": "n our quest to understand EarthÕs past and prepare for its future, scientific ocean drilling emerges as a crucial tool. The International Ocean Discovery Program (IODP) leads the charge in this fascinating field, offering unprecedented insights into our planetÕs history and potential future.",
-      "thumbnail": "https://oneworldnetwork.io/wp-content/uploads/2024/04/maxresd",
+      "title": "The Library of Earth's History",
+      "shortDescription": "In our quest to understand Earth's past and prepare for its future",
+      "thumbnail": "scientific ocean drilling emerges as a crucial tool. The International Ocean Discovery Program (IODP) leads the charge in this fascinating field",
       "genres": [
-        "Environment & Earth"
+        "offering unprecedented insights into our planet's history and potential future."
       ],
-      "releaseDate": "2026-01-01",
+      "releaseDate": "https://oneworldnetwork.io/wp-content/uploads/2024/04/maxresdefault.jpg",
       "content": {
-        "dateAdded": "2026-01-01T00:00:00Z",
+        "dateAdded": "Environment & Earth",
         "videos": [
           {
-            "url": "https://stream.mux.com/EPuTkWqf1007KdiD9ToH8I502131oKLdAdg4Wr003jM02Bo.m3u8",
+            "url": "https://stream.mux.com/01/01/2026.m3u8",
             "quality": "HD",
             "videoType": "HLS"
           }
         ],
-        "duration": 526
+        "duration": 2026
       }
     },
     {
