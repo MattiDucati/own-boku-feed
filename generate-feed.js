@@ -124,27 +124,39 @@ async function main() {
   const movies = [];
 
   for (const row of rows) {
-    const playbackId = row.muxPlaybackId;
-    if (!playbackId) {
-      console.warn(`⚠️   Skipping row "${row.id}" — no muxPlaybackId`);
+    // CSV column is called "videos" and contains the Mux playback ID
+    const playbackId = row.videos;
+    if (!playbackId || !row.id) {
+      console.warn(`⚠️   Skipping empty or incomplete row`);
       continue;
     }
 
     const asset = muxAssets[playbackId];
     if (!asset) {
-      console.warn(`⚠️   Mux asset not found for playbackId "${playbackId}" (id: ${row.id}) — using CSV fallback`);
+      console.warn(`⚠️   Mux asset not found for playbackId "${playbackId}" (id: ${row.id}) — duration will be 0`);
     }
 
-    const duration = asset ? Math.round(asset.duration) : 0;
-    const quality  = getQuality(asset);
+    // Use Mux duration if available, otherwise fall back to CSV value
+    const duration = asset
+      ? Math.round(asset.duration)
+      : (parseInt(row.duration) || 0);
+
+    const quality = getQuality(asset);
+
+    // Normalise release date from DD/MM/YYYY to YYYY-MM-DD if needed
+    let releaseDate = row.releaseDate || '';
+    if (releaseDate.match(/^\d{2}\/\d{2}\/\d{4}$/)) {
+      const [dd, mm, yyyy] = releaseDate.split('/');
+      releaseDate = `${yyyy}-${mm}-${dd}`;
+    }
 
     movies.push({
       id: row.id,
       title: row.title,
       shortDescription: row.shortDescription,
       thumbnail: row.thumbnail,
-      genres: [row.genre],
-      releaseDate: row.releaseDate,
+      genres: [row.genres],
+      releaseDate,
       content: {
         dateAdded: row.dateAdded,
         videos: [{
