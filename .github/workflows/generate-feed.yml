@@ -1,17 +1,10 @@
 name: Generate feed.json
 
 on:
-  # Run automatically whenever metadata.csv is updated
   push:
     paths:
       - 'metadata.csv'
-
-  # Also allow manual trigger from GitHub Actions tab
   workflow_dispatch:
-
-  # Optional: run on a schedule (every day at 2am UTC)
-  # schedule:
-  #   - cron: '0 2 * * *'
 
 jobs:
   generate:
@@ -39,7 +32,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
           git add feed.json
           git diff --staged --quiet || git commit -m "chore: regenerate feed.json [skip ci]"
+          git pull --rebase origin main
           git push
