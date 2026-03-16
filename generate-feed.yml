@@ -1,0 +1,44 @@
+name: Generate feed.json
+
+on:
+  # Run automatically whenever metadata.csv is updated
+  push:
+    paths:
+      - 'metadata.csv'
+
+  # Also allow manual trigger from GitHub Actions tab
+  workflow_dispatch:
+
+  # Optional: run on a schedule (every day at 2am UTC)
+  # schedule:
+  #   - cron: '0 2 * * *'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run feed generator
+        env:
+          MUX_TOKEN_ID: ${{ secrets.MUX_TOKEN_ID }}
+          MUX_TOKEN_SECRET: ${{ secrets.MUX_TOKEN_SECRET }}
+        run: node generate-feed.js
+
+      - name: Commit updated feed.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add feed.json
+          git diff --staged --quiet || git commit -m "chore: regenerate feed.json [skip ci]"
+          git push
